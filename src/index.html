@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/output.css"> <!-- untuk saat menggunakan tailwind secara lokal -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- untuk saat menggunakan tailwind secara public -->
+    <title>Taildwindcss Port-1</title>
+    <style>
+        .gradient {
+            background-image: linear-gradient(to bottom right, #4C51BF, #702459);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="w-screen mx-auto px-4">
+        <nav class="flex flex-wrap p-6 justify-between">
+            <div class="flex flex-shrink-0 mr-6">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-50 h-10 mr-2">
+                    <path fill-rule="evenodd"
+                        d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
+                        clip-rule="evenodd" />
+                    <path
+                        d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z" />
+                </svg>
+            </div>
+            <div class="block lg:hidden">
+                <a href="#"
+                    class="flex items-center px-3 py-2 rounded border border-indigo-400 text-indigo-500 hover:text-indigo-700 hover:border-indigo-700">
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </a>
+            </div>
+            <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto">
+                <div class="text-sm flex-grow">
+                    <a href="#about"
+                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:textgray-900 text-lg mr-4">
+                        About me
+                    </a>
+                    <a href="#skill"
+                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:textgray-900 text-lg mr-4">
+                        Skill framework
+                    </a>
+                    <a href="#recent"
+                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:textgray-900 text-lg mr-4">
+                        Recent work
+                    </a>
+                    <a href="#contact"
+                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:textgray-900 text-lg mr-4">
+                        Contact me
+                    </a>
+                </div>
+                <div><a href="#"
+                        class="inline-block text-sm px-4 py-2 rounded text-gray-600 border border-gray-600 hover:border-transparent hover:text-white hover:bg-indigo-700 mt-4 lg:mt-0">Contact
+                        me</a>
+                </div>
+            </div>
+        </nav>
+
+    </section>
+    <section class="w-screen mx-auto py-4 gradient">
+        <div class="px-16 py-8 text-center text-white">
+            <h1 class="w-full text-5xl font-bold">About me</h1>
+            <div class="mb-4">
+                <div class="bg-pink-500 w-2/3 md:w-1/6 opacity-75 rounded h-1 mx-auto mt-1"></div>
+            </div>
+            <h2 class="text-3xl font-bold mb-2">
+                Hai, Saya Izan. Senang berjumpa dengan anda.
+            </h2>
+            <h3 class="text-lg mb-2">
+                Saya seorang Mahasiswa yang berkeinginan berkecimpung dibidang Web Development yaitu sebagai Frontend
+                Web Dev, Saya terus belajar dan mencari pengalaman sebanyak-banyaknya agar dapat lebih mumpuni untuk
+                mengemban jenjang karir yang akan saya tempuh.
+            </h3>
+            <div class="w-full">
+                <div class="px-4 py-4">
+                    <img src="/dist/img-profile.jpg" alt="" class="w-48 max-w-full shadow-lg mx-auto rounded-full">
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </section>
+    <section class="w-screen mx-auto py-4 bg-white h-32">Skill framework</section>
+    <section class="w-screen mx-auto py-4 bg-gray-300 h-32 text-indigo-700 lg:text-green-700">Recent work</section>
+    <section class="w-screen mx-auto py-4 bg-indigo-700 h-32">Contact me</section>
+    <section class="w-screen mx-auto py-4 bg-white h-32">Footer</section>
+</body>
+
+</html>
