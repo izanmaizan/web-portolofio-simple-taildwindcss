@@ -10,6 +10,9 @@
     <!-- untuk saat menggunakan tailwind secara public -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <!--cdn untuk fontawesome icons-->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <!-- JQuery untuk smooth scrolling -->
     <title>Taildwindcss Port-1</title>
     <style>
         .gradient {
@@ -23,7 +26,7 @@
 </head>
 
 <body>
-    <section class="w-screen mx-auto px-4">
+    <section class="w-screen mx-auto px-4 fixed bg-white z-10">
         <nav class="flex flex-wrap p-6 justify-between">
             <div class="flex flex-shrink-0 mr-6">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-50 h-10 mr-2">
@@ -58,21 +61,17 @@
                         class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:textgray-900 text-lg mr-4">
                         Recent work
                     </a>
-                    <a href="#contact"
-                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:textgray-900 text-lg mr-4">
-                        Contact me
-                    </a>
                 </div>
                 <div>
-                    <a href="#"
+                    <a href="#contact"
                         class="inline-block text-sm px-4 py-2 rounded text-gray-600 border border-gray-600 hover:border-transparent hover:text-white hover:bg-indigo-700 mt-4 lg:mt-0">Contact
                         me</a>
                 </div>
             </div>
         </nav>
     </section>
-    <section class="w-screen mx-auto py-4 gradient">
-        <div class="px-16 py-8 text-center text-white">
+    <section id="about" class="w-screen mx-auto py-4 gradient">
+        <div class="px-16 pt-20 pb-8 text-center text-white">
             <h1 class="w-full text-5xl font-bold">About me</h1>
             <div class="mb-4">
                 <div class="bg-pink-500 w-2/3 md:w-1/6 opacity-75 rounded h-1 mx-auto mt-1"></div>
@@ -156,8 +155,8 @@
             </div>
         </div>
     </section>
-    <section class="w-screen mx-auto py-4 bg-white">
-        <div class="flex flex-wrap">
+    <section id="skill" class="w-screen mx-auto py-4 bg-white">
+        <div class="flex flex-wrap pt-20">
             <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
                 <img src="/dist/laptop.jpg" alt="" class="max-w-full rounded-lg shadow-lg" />
             </div>
@@ -194,8 +193,8 @@
             </div>
         </div>
     </section>
-    <section class="container mx-auto py-8 bg-white">
-        <div class="text-center mb-8">
+    <section id="recent" class="container mx-auto py-8 bg-white">
+        <div class="text-center mb-8 pt-20">
             <h1 class="w-full my-2 text-5xl font-bold text-gray-700">
                 My Recent work
             </h1>
@@ -262,10 +261,10 @@
             </div>
         </div>
     </section>
-    <section class="w-screen mx-auto py-4 gradient">
-        <h1 class="w-full my-2 font-bold text-5xl text-center text-white">Contact me</h1>
+    <section id="contact" class="w-screen mx-auto py-4 gradient">
+        <h1 class="w-full my-2 font-bold pt-20 text-5xl text-center text-white">Contact me</h1>
         <div class="mb-4">
-            <div class="h-1 mx-auto bg-pink-500 rounded w-1/4 opacity-75 my-0 px-0"></div>
+            <div class="h-1 mx-auto bg-pink-500 rounded w-1/6 opacity-75 my-0 px-0"></div>
         </div>
         <div class="container p-4 mb-6 w-full lg:w-1/2 shadow-lg bg-gray-200 mx-auto rounded-lg">
             <form action="" class="p-5 lg:p-10 text-center">
@@ -297,7 +296,63 @@
             </form>
         </div>
     </section>
-    <section class="w-screen mx-auto py-4 bg-white h-32">Footer</section>
+    <section class="w-screen mx-auto py-4 bg-white mt-8 mb-8">
+        <div class="text-center">
+            <a href="https://github.com/izanmaizan" target="_blank" class="p-2 text-gray-800 hover:text-gray-950">
+                <i class="fa-2x fab fa-github"></i>
+            </a>
+            <a href="linkedin.com/in/izanmaizan" target="_blank" class="p-2 text-indigo-700 hover:text-indigo-900">
+                <i class="fa-2x fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCischWuDWd8Mri2SokgxQ_Q" target="_blank"
+                class="p-2 text-red-500 hover:text-red-700">
+                <i class="fa-2x fab fa-youtube"></i>
+            </a>
+        </div>
+        <div class="text-center mt-4 text-gray-500 text-sm">
+            Design with Tailwindcss <br>by Maizan Insani Akbar
+        </div>
+    </section>
+
+    <!-- script untuk smooth scrolling  -->
+    <script>
+        // Select all links with hashes
+        $('a[href*="#"]')
+            // Remove links that don't actually link to anything
+            .not('[href="#"]')
+            .not('[href="#0"]')
+            .click(function (event) {
+                // On-page links
+                if (
+                    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                    &&
+                    location.hostname == this.hostname
+                ) {
+                    // Figure out element to scroll to
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    // Does a scroll target exist?
+                    if (target.length) {
+                        // Only prevent default if animation is actually gonna happen
+                        event.preventDefault();
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000, function () {
+                            // Callback after animation
+                            // Must change focus!
+                            var $target = $(target);
+                            $target.focus();
+                            if ($target.is(":focus")) { // Checking if the target was focused
+                                return false;
+                            } else {
+                                $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                                $target.focus(); // Set focus again
+                            };
+                        });
+                    }
+                }
+            });
+    </script>
 </body>
 
 </html>
